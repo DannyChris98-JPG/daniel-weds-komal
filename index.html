@@ -323,7 +323,7 @@ footer .script{font-family:var(--f-script);color:var(--rose);font-size:2.4rem;li
         <h3>Monday, 21 December 2026</h3>
         <p class="host">Hosted by the Erasmus family</p>
         <ul class="events">
-          <li><span class="ev-name">Reception</span><span class="label">Evening</span><p>Dinner, celebration and our first evening as a married couple.</p></li>
+          <li><span class="ev-name">Reception</span><span class="label">7 PM</span><p>Dinner, celebration and our first evening as a married couple.</p></li>
         </ul>
         <div class="venue">
           <span class="label">Venue</span>
@@ -410,7 +410,7 @@ const CONFIG = {
   rsvpWhatsApp: "", // country code + number, digits only, e.g. "919830012345"
   calendar: {
     day1: { text: "Daniel & Komal · Haldi, Mehendi & Phere", dates: "20261220/20261221", location: "Shivam Banquet Hall, 36, Block B, Bangur Avenue, Lake Town, Kolkata 700055", details: "Hosted by the Lakhotia family" },
-    day2: { text: "Daniel & Komal · Reception", dates: "20261221/20261222", location: "Regenta Orko's, 621 Prantik Pally, Kasba, Kolkata 700107", details: "Hosted by the Erasmus family" }
+    day2: { text: "Daniel & Komal · Reception", dates: "20261221T190000/20261221T230000", location: "Regenta Orko's, 621 Prantik Pally, Kasba, Kolkata 700107", details: "Hosted by the Erasmus family" }
   }
 };
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -562,7 +562,7 @@ setInterval(updateCountdown, 1000);
 document.querySelectorAll("[data-cal]").forEach(a => {
   const c = CONFIG.calendar[a.dataset.cal];
   a.href = "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=" + c.dates +
-    "&text=" + encodeURIComponent(c.text) +
+    "&ctz=Asia/Kolkata&text=" + encodeURIComponent(c.text) +
     "&location=" + encodeURIComponent(c.location) +
     "&details=" + encodeURIComponent(c.details);
 });
